@@ -7,46 +7,17 @@ import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
-
-const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const RestaurantCardCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Info = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-
-const Title = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-
-const Section = styled(View)`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: ${(props) => props.theme.space[2]};
-  padding-bottom: ${(props) => props.theme.space[2]};
-`;
-const SectionEnd = styled(View)`
-  flex-direction: row;
-  justify-content: flex-end;
-`;
-
-const Rating = styled(View)`
-  flex-direction: row;
-`;
-
-const Address = styled(Text)`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
+import {
+  RestaurantCard,
+  RestaurantCardCover,
+  Info,
+  Title,
+  Section,
+  SectionEnd,
+  Rating,
+  Address,
+  Icon,
+} from "../components/restaurant-info-card.styles";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
@@ -76,10 +47,10 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
           </Rating>
           <SectionEnd>
             {isClosedTemporayily && <Text style={{ color: "red" }}>CLOSED TEMPORARILY</Text>}
-            <Spacer varient={"left.medium"} />
+            <Spacer position="left" size="medium" />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <Spacer varient={"left.medium"} />
-            <Image key={icon} style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+            <Spacer position="left" size="medium" />
+            <Icon source={{ uri: icon }} />
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
