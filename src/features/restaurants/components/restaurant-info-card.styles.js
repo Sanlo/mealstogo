@@ -14,12 +14,6 @@ export const Info = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-export const Title = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
-
 export const Section = styled.View`
   flex-direction: row;
   align-items: center;
