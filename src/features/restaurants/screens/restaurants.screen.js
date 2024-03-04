@@ -15,6 +15,8 @@ const SearchContainer = styled(View)`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+const RestaurantList = styled(FlatList).attrs({ contentContainerStyle: { padding: 16 } })``;
+
 export const RestaurantsScreen = () => {
   const [query, setQuery] = useState("");
 
@@ -23,7 +25,7 @@ export const RestaurantsScreen = () => {
       <SearchContainer>
         <Searchbar placeholder="Search" onChangeText={setQuery} value={query} />
       </SearchContainer>
-      <FlatList
+      <RestaurantList
         data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]}
         renderItem={() => (
           <>
@@ -33,7 +35,6 @@ export const RestaurantsScreen = () => {
           </>
         )}
         keyExtractor={(item) => item.name}
-        contentContainerStyle={{ padding: 16 }}
       />
     </SafeArea>
   );
