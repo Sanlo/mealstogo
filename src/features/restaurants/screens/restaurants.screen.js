@@ -16,7 +16,7 @@ const RestaurantList = styled(FlatList).attrs({ contentContainerStyle: { padding
 
 export const RestaurantsScreen = () => {
   const [query, setQuery] = useState("");
-  const restaurantContext = useContext(RestaurantsContext);
+  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
   return (
     <SafeArea>
@@ -24,14 +24,14 @@ export const RestaurantsScreen = () => {
         <Searchbar placeholder="Search" onChangeText={setQuery} value={query} />
       </SearchContainer>
       <RestaurantList
-        data={restaurantContext.restaurants}
-        renderItem={() => (
-          <>
+        data={restaurants}
+        renderItem={({ item }) => {
+          return (
             <Spacer position="bottom" size="large">
-              <RestaurantsInfoCard />
+              <RestaurantsInfoCard restaurant={item} />
             </Spacer>
-          </>
-        )}
+          );
+        }}
         keyExtractor={(item) => item.name}
       />
     </SafeArea>

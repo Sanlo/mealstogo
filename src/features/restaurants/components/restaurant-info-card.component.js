@@ -18,15 +18,15 @@ import {
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
   const {
-    name = "some restaurant",
+    name,
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
     ],
     address = "100 some random street",
-    isOpenNow = true,
-    rating = 4,
-    isClosedTemporayily = true,
+    isOpenNow,
+    rating,
+    isClosedTemporarily,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -44,7 +44,7 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
             ))}
           </Rating>
           <SectionEnd>
-            {isClosedTemporayily && <Text variant="error">CLOSED TEMPORARILY</Text>}
+            {isClosedTemporarily && <Text variant="error">CLOSED TEMPORARILY</Text>}
             <Spacer position="left" size="medium" />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
             <Spacer position="left" size="medium" />
