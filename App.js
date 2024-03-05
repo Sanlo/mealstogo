@@ -12,18 +12,18 @@ import { Text } from "react-native";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
 import { theme } from "./src/infrastructure/theme";
 
-const TAB_ICON = {
-  Restaurants: "restaurant",
-  Map: "map",
-  Settings: "settings",
-};
-
 const MapScreen = () => {
   return <Text>Map</Text>;
 };
 
 const SettingsScreen = () => {
   return <Text>Settings</Text>;
+};
+
+const TAB_ICON = {
+  Restaurants: "restaurant",
+  Map: "map",
+  Settings: "settings",
 };
 
 const Tab = createBottomTabNavigator();
