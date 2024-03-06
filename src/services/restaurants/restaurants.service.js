@@ -23,5 +23,6 @@ export const restaurantsTranform = ({ results = [] }) => {
       address: restaurant.vicinity,
     };
   });
+
   return camelize(mappedResults);
 };

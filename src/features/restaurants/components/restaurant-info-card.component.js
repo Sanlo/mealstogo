@@ -17,17 +17,8 @@ import {
 } from "../components/restaurant-info-card.styles";
 
 export const RestaurantsInfoCard = ({ restaurant = {} }) => {
-  const {
-    name,
-    icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    photos = [
-      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
-    ],
-    address = "100 some random street",
-    isOpenNow,
-    rating,
-    isClosedTemporarily,
-  } = restaurant;
+  const { name, icon, photos, address, isOpenNow, rating, isClosedTemporarily, placeId } =
+    restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
@@ -35,20 +26,21 @@ export const RestaurantsInfoCard = ({ restaurant = {} }) => {
     <RestaurantCard elevation={5}>
       <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
       <Info>
-        {/* <Title>{name}</Title> */}
         <Text variant="label">{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map((key) => (
-              <SvgXml key={key} xml={star} width={20} height={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml key={`star-${placeId}-${i}`} xml={star} width={20} height={20} />
             ))}
           </Rating>
           <SectionEnd>
             {isClosedTemporarily && <Text variant="error">CLOSED TEMPORARILY</Text>}
-            <Spacer position="left" size="medium" />
-            {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <Spacer position="left" size="medium" />
-            <Icon source={{ uri: icon }} />
+            <Spacer position="left" size="medium">
+              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+            </Spacer>
+            <Spacer position="left" size="medium">
+              <Icon source={{ uri: icon }} />
+            </Spacer>
           </SectionEnd>
         </Section>
         <Address>{address}</Address>
