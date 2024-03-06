@@ -1,13 +1,14 @@
 ﻿import React, { useContext } from "react";
 import styled from "styled-components";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
-import { FlatList, Pressable } from "react-native";
+import { FlatList } from "react-native";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/search.component";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const LoadingContainer = styled.View`
   position: absolute;
@@ -37,11 +38,11 @@ export const RestaurantsScreen = ({ navigation }) => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
-            <Pressable onPress={() => navigation.navigate("RestaurantDetail")}>
+            <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail")}>
               <Spacer position="bottom" size="large">
                 <RestaurantsInfoCard restaurant={item} />
               </Spacer>
-            </Pressable>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={(item) => item.name}

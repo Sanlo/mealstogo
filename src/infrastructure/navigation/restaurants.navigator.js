@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { TransitionPresets, createStackNavigator } from "@react-navigation/stack";
 
 import { Text } from "react-native";
 
@@ -10,7 +10,10 @@ const RestaurantStack = createStackNavigator();
 
 export const RestaurantsNavigator = () => {
   return (
-    <RestaurantStack.Navigator headerMode="none">
+    <RestaurantStack.Navigator
+      headerMode="none"
+      screenOptions={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
+    >
       <RestaurantStack.Screen name="Restaurants" component={RestaurantsScreen} />
       <RestaurantStack.Screen
         name="RestaurantDetail"
