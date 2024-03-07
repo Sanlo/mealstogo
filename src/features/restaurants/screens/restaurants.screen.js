@@ -8,7 +8,7 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/search.component";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 
 const LoadingContainer = styled.View`
   position: absolute;
@@ -38,7 +38,9 @@ export const RestaurantsScreen = ({ navigation }) => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
-            <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("RestaurantDetail", { restaurant: item })}
+            >
               <Spacer position="bottom" size="large">
                 <RestaurantsInfoCard restaurant={item} />
               </Spacer>
