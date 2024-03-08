@@ -16,7 +16,6 @@ const TAB_ICON = {
 const Map = () => {
   return (
     <SafeArea>
-      <Text>Map</Text>
       <MapScreen />
     </SafeArea>
   );
