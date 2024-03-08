@@ -13,12 +13,8 @@ const TAB_ICON = {
   Settings: "settings",
 };
 
-const Map = () => {
-  return (
-    <SafeArea>
-      <MapScreen />
-    </SafeArea>
-  );
+const Map = ({ navigation }) => {
+  return <MapScreen navigation={navigation} />;
 };
 
 const SettingsScreen = () => {
