@@ -10,6 +10,7 @@ import { RestaurantsContext } from "../../../services/restaurants/restaurants.co
 import { Search } from "../components/search.component";
 import { TouchableOpacity } from "react-native";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
+import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
 
 const LoadingContainer = styled.View`
   position: absolute;
@@ -41,6 +42,7 @@ export const RestaurantsScreen = ({ navigation }) => {
         isFavouritesToggled={isToggled}
         onFavouritesToggled={() => setIsToggled(!isToggled)}
       />
+      {isToggled && <FavouritesBar onNavigate={navigation.navigate} favourites={favourites} />}
       <RestaurantList
         data={restaurants}
         renderItem={({ item }) => {
