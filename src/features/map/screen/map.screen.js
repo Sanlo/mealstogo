@@ -1,10 +1,10 @@
 ﻿import React, { useContext, useState, useEffect } from "react";
 import MapView, { Callout, Marker } from "react-native-maps";
+import styled from "styled-components";
 
 import { Search } from "../components/search.component";
 import { LocationContext } from "../../../services/location/location.context";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import styled from "styled-components";
 import { MapCallout } from "../components/map-callout.component";
 
 const Map = styled(MapView)`

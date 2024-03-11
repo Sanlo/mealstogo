@@ -2,13 +2,13 @@
 import styled from "styled-components";
 import { ActivityIndicator, MD2Colors } from "react-native-paper";
 import { FlatList } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 import { SafeArea } from "../../../components/utility/safe-area.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { RestaurantsInfoCard } from "../components/restaurant-info-card.component";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/search.component";
-import { TouchableOpacity } from "react-native";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourites/favourites-bar.component";
 
