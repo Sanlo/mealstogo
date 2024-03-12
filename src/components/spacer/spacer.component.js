@@ -24,3 +24,8 @@ const getVariant = (position, size, theme) => {
 export const Spacer = styled.View`
   ${({ position, size, theme }) => getVariant(position, size, theme)}
 `;
+
+Spacer.defaultProps = {
+  position: "top",
+  size: "small",
+};
