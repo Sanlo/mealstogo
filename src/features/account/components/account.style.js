@@ -1,7 +1,13 @@
-﻿import styled from "styled-components/native";
+﻿import { Button } from "react-native-paper";
+import styled from "styled-components/native";
 
-export const BackgroundWrapper = styled.View`
-  flex: 1;
+import { colors } from "../../../infrastructure/theme/colors";
+
+export const BackgroundCover = styled.View`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
 `;
 
 export const BackgroundImage = styled.ImageBackground.attrs({
@@ -10,4 +16,16 @@ export const BackgroundImage = styled.ImageBackground.attrs({
   flex: 1;
   align-items: center;
   justify-content: center;
+`;
+
+export const AccountContainer = styled.View`
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: ${(props) => props.theme.space[4]};
+  margin-top: ${(props) => props.theme.space[2]};
+`;
+
+export const AuthButton = styled(Button).attrs({
+  color: colors.brand.primary,
+})`
+  padding: ${(props) => props.theme.space[2]};
 `;

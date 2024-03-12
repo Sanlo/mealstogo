@@ -1,7 +1,7 @@
 ﻿import React from "react";
 
-import { AccountBackground } from "../components/background.component";
+import { BackgroundImage } from "../components/account.style";
 
 export const LoginScreen = () => {
-  return <AccountBackground />;
+  return <BackgroundImage />;
 };

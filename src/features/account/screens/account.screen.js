@@ -1,7 +1,35 @@
 ﻿import React from "react";
 
-import { AccountBackground } from "../components/background.component";
+import { Spacer } from "../../../components/spacer/spacer.component";
+import {
+  AccountContainer,
+  AuthButton,
+  BackgroundCover,
+  BackgroundImage,
+} from "../components/account.style";
 
-export const AccountScreen = () => {
-  return <AccountBackground />;
+export const AccountScreen = ({ navigation }) => {
+  return (
+    <BackgroundImage>
+      <BackgroundCover />
+      <AccountContainer>
+        <AuthButton
+          icon="lock-open-outline"
+          mode="contained"
+          onPress={() => navigation.navigate("Login")}
+        >
+          LOGIN
+        </AuthButton>
+        <Spacer size="large">
+          <AuthButton
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => navigation.navigate("Register")}
+          >
+            REGISTER
+          </AuthButton>
+        </Spacer>
+      </AccountContainer>
+    </BackgroundImage>
+  );
 };
