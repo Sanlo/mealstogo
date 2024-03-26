@@ -1,5 +1,8 @@
 ﻿name: update
-on: push
+on:
+  push:
+    tags:
+      - "**"
 
 jobs:
   update:
