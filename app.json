@@ -25,9 +25,6 @@
       },
       "package": "com.sanlozhang.mealstogo"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
     "plugins": [
       "expo-font"
     ],
@@ -35,6 +32,13 @@
       "eas": {
         "projectId": "602b6767-3fc0-4ba5-a5c1-79339a032a06"
       }
-    }
+    },
+    "runtimeVersion": {
+      "policy": "nativeVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/602b6767-3fc0-4ba5-a5c1-79339a032a06"
+    },
+    "owner": "sanlozhang"
   }
 }
